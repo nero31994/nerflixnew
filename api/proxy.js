@@ -5,7 +5,7 @@ export default async function handler(req, res) {
         return res.status(400).json({ error: "Invalid Movie ID" });
     }
 
-    const vidSrcUrl = `https://vidapi.xyz/embed/movie/${id}`;
+    const vidSrcUrl = `https://vidsrc.xyz/embed/movie/${id}`;
 
     try {
         const response = await fetch(vidSrcUrl);
