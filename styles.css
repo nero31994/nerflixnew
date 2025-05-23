@@ -1,0 +1,177 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Background Overlay */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("https://i.ibb.co/X3Qv7dn/giphy.gif") center/cover no-repeat;
+    filter: blur(8px);
+    z-index: -1;
+}
+
+/* Sticky Header */
+.top-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+/* Logo */
+.logo {
+    height: 40px;
+}
+
+/* Search Bar */
+.search-container {
+    flex-grow: 1;
+    text-align: center;
+}
+
+#search {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+}
+
+/* Movie Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 80px 20px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Movie Item */
+.movie {
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover {
+    transform: scale(1.08);
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Movie Overlay */
+.movie .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.movie:hover .overlay {
+    opacity: 1;
+}
+
+/* Loading & Error */
+.loading, .error {
+    font-size: 18px;
+    margin-top: 20px;
+    color: #ff5757;
+}
+
+/* Movie Info Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#watchNow {
+    background: #ff5757;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#watchNow:hover {
+    background: #ff0000;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .top-menu {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #search {
+        width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        padding-top: 100px;
+    }
+}
